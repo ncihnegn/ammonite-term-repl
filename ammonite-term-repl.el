@@ -181,7 +181,7 @@ Argument FILE-NAME the file name."
                (path (locate-dominating-file default-directory target))
                (file (expand-file-name target path)))
       (setq default-directory path)
-      (setq-local ammonite-term-repl-program (if path "mill" "amm"))
+      (setq-local ammonite-term-repl-program (if path "./mill" "amm"))
       (with-temp-buffer
         (insert-file-contents file)
         (goto-char (point-min))
